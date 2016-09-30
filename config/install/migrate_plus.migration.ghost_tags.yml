@@ -12,6 +12,7 @@ process:
   uuid: uuid
   name: name
   description: description
+  path: path_alias # from prepareRow
 dependencies:
   enforced:
     module:

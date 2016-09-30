@@ -8,6 +8,7 @@
 namespace Drupal\migrate_ghost\Plugin\migrate\source;
 
 use Drupal\migrate\Plugin\migrate\source\SqlBase;
+use Drupal\migrate\Row;
 
 /**
  * Source plugin for the tags.
@@ -54,5 +55,19 @@ class GhostTags extends SqlBase {
         'alias' => 't',
       ],
     ];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function prepareRow(Row $row) {
+    $slug = $row->getSourceProperty('slug');
+
+    if (!empty($slug)) {
+      // The default Ghost URL for tags is '/tag/{slug}'
+      $row->setSourceProperty('path_alias', '/tag/' . $slug);
+    }
+
+    return parent::prepareRow($row);
   }
 }
