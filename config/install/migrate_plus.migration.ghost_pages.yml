@@ -1,0 +1,36 @@
+id: ghost_pages
+label: Ghost pages
+migration_group: ghost
+source:
+  plugin: ghost_pages
+destination:
+  plugin: entity:node
+process:
+  type:
+    plugin: default_value
+    default_value: page # Customise: Content type
+  uuid: uuid
+  title: title
+  status: published # from prepareRow
+  created: created # from prepareRow
+  changed: changed # from prepareRow
+  promote: featured
+  path: path_alias # from prepareRow
+  sticky:
+    plugin: default_value
+    default_value: 0
+  'body/value': markdown # Customise: Imported content field
+  'body/format':
+    plugin: default_value
+    default_value: markdown # Customise: Input filter name
+  field_tags:
+    plugin: migration
+    migration: ghost_tags
+    source: tags
+migration_dependencies:
+  required:
+    - ghost_tags
+dependencies:
+  enforced:
+    module:
+      - migrate_ghost
