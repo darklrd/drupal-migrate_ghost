@@ -1,0 +1,18 @@
+id: ghost_tags
+label: Ghost tags
+migration_group: ghost
+source:
+  plugin: ghost_tags
+destination:
+  plugin: entity:taxonomy_term
+process:
+  vid:
+    plugin: default_value
+    default_value: tags
+  uuid: uuid
+  name: name
+  description: description
+dependencies:
+  enforced:
+    module:
+      - migrate_ghost

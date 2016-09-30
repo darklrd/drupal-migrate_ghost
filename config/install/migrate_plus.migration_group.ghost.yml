@@ -1,0 +1,11 @@
+id: ghost
+label: Ghost blog import
+description: Import content from a Ghost blog.
+source_type: Ghost database
+shared_configuration:
+  source:
+    key: ghost
+dependencies:
+  enforced:
+    module:
+      - migrate_ghost
