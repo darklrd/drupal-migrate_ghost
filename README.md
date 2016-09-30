@@ -39,6 +39,31 @@ to complete the migration:
 
     drush mi --group=ghost
 
+
+## Assumptions
+
+This migration process makes a bunch of assumptions, that will work great
+if you install Drupal using the Standard installation profiles.
+
+These assumptions are that you:
+
+1. want Ghost tags migrated to the “Tags” taxonomy vocabulary.
+2. want Ghost posts migrated to be nodes of type “Article”
+3. want Ghost pages migrated to be nodes of type “Page”
+4. have a text format named "markdown" and
+5. want to import the Markdown source of your blog posts (rather than the
+   HTML version that could be used with a WYSIWYG editor)
+
+Currently, changing any of these assumptions will require changing this
+module's source code.
+
+
+## Status of this module
+ 
+See [CONTRIBUTING](CONTRIBUTING.md) for details about outstanding work
+and the future of this module.
+
+
 [Drupal]: https://www.drupal.org/
 [Ghost]: https://ghost.org/
 [Migrate Plus]: https://www.drupal.org/project/migrate_plus
