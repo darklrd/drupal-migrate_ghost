@@ -22,7 +22,8 @@ class GhostTags extends SqlBase {
    */
   public function query() {
     $query = $this->select('tags', 't')
-      ->fields('t', ['id', 'uuid', 'name', 'slug', 'description', 'created_at', 'updated_at']);
+      ->fields('t');
+
     return $query;
   }
 
