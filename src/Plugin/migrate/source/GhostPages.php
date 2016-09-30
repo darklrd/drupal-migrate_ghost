@@ -2,15 +2,13 @@
 
 /**
  * @file
- * Contains Pages
+ * Contains GhostPages
  */
 
 namespace Drupal\migrate_ghost\Plugin\migrate\source;
 
 use Drupal\migrate\Plugin\migrate\source\SqlBase;
 use Drupal\migrate\Row;
-use Drush\Log\LogLevel;
-use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
  * Source plugin for the posts.
